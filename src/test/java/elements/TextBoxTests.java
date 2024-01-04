@@ -23,10 +23,13 @@ public class TextBoxTests extends BaseTest {
                  .setPermanentAddress(permAdress)
                  .clickButton();// todo сделать проверку на видимость окна и проверок ключ значение
         textBoxPage.modalResult();
-        textBoxPage.verifyResult("Name;", userName)
-                    .verifyResult("Email:", mail)
-                    .verifyResult("Current Address :", address)
-                    .verifyResult("Permananet Address :", permAdress);
+        textBoxPage.checkResult("Name:"+userName, "Email:"+mail,
+                "Current Address :"+address,"Permananet Address :"+permAdress);
+
+//        textBoxPage.verifyResult("Name;", userName)
+//                    .verifyResult("Email:", mail)
+//                    .verifyResult("Current Address :", address)
+//                    .verifyResult("Permananet Address :", permAdress);
 
 
 
