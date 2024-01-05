@@ -9,35 +9,27 @@ import org.junit.jupiter.api.Test;
 
 
 public class TextBoxTests extends BaseTest {
-    String userName = "Khasan",
-            mail = "khasan@mail.ru",
-            address = "Republic of Dagestan",
-            permAdress = "Moscow City";
+
+
     @Tags({@Tag("BLOCKER"), @Tag("UI-TEST")})
     @Test
     void textBox(){
          textBoxPage.openPage()
-                 .setFullName(userName)
-                 .setEmail(mail)
-                 .setCurrentAddress(address)
-                 .setPermanentAddress(permAdress)
+                 .setFullName(data.userFullName)
+                 .setEmail(data.mail)
+                 .setCurrentAddress(data.address)
+                 .setPermanentAddress(data.permAddress)
                  .clickButton();// todo сделать проверку на видимость окна и проверок ключ значение
         textBoxPage.modalResult();
-        textBoxPage.checkResult("Name:"+userName, "Email:"+mail,
-                "Current Address :"+address,"Permananet Address :"+permAdress);
-
-//        textBoxPage.verifyResult("Name;", userName)
-//                    .verifyResult("Email:", mail)
-//                    .verifyResult("Current Address :", address)
-//                    .verifyResult("Permananet Address :", permAdress);
-
-
+        textBoxPage.checkResult("Name:"+data.userFullName, "Email:"+data.mail,
+                "Current Address :"+data.address,
+                "Permananet Address :"+data.permAddress);
 
     }
 
     @Test
     void name() {
-        //fdfg
+      // negative
 
     }
 }

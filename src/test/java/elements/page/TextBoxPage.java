@@ -16,10 +16,10 @@ public class TextBoxPage {
             header = $(".main-header"),
             submitButton = $x("//button[@id='submit']"),
             result = $("#output #name"),
-            nameResult = $("#name"),
-            emailResult = $("#email"),
-            currentAddressResult = $("#currentAddress"),
-            permanentAddressResult = $("#permanentAddress");
+            nameResult = $("#output #name"),
+            emailResult = $("#output #email"),
+            currentAddressResult = $("#output #currentAddress"),
+            permanentAddressResult = $("#output #permanentAddress");
 
 
 
