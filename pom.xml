@@ -14,7 +14,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven-surefire-plugin.version>2.21.0</maven-surefire-plugin.version>
         <junit-platform-surefire-provider.version>1.1.0</junit-platform-surefire-provider.version>
-        <aspectj.version>1.8.10</aspectj.version>
+        <aspectj.version>1.9.20.1</aspectj.version>
         <allure-junit5.version>LATEST</allure-junit5.version>
         <allure.version>2.24.0</allure.version>
     </properties>
@@ -35,11 +35,6 @@
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>LATEST</version>
-        </dependency>
-        <dependency>
-            <groupId>io.qameta.allure</groupId>
-            <artifactId>allure-junit5</artifactId>
-            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.typesafe</groupId>
