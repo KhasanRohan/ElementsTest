@@ -3,6 +3,7 @@ package elements;
 import com.codeborne.selenide.CollectionCondition;
 import core.BaseTest;
 import elements.page.CheckBoxPage;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -63,6 +64,7 @@ public class CheckBoxTest extends BaseTest {
     }
     public static final String TITLE = "Check box";
 
+    @Tag("check")
     @Test
     void checkOptions() {
         CheckBoxPage checkBoxPage = new CheckBoxPage();
