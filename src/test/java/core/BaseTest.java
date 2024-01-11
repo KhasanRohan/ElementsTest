@@ -1,11 +1,17 @@
 package core;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import com.epam.reportportal.selenide.ReportPortalSelenideEventListener;
 import generator.TestData;
 import elements.page.TextBoxPage;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 
-abstract public class BaseTest {
+
+
+public class BaseTest {
     public TextBoxPage textBoxPage = new TextBoxPage();
     public TestData data = new TestData();
 
@@ -13,7 +19,11 @@ abstract public class BaseTest {
     static void beforeAll(){
         Configuration.pageLoadStrategy = "eager";
         Configuration.baseUrl ="https://demoqa.com";
+//        SelenideLogger.addListener("Report Portal logger", new ReportPortalSelenideEventListener());
 
-
+    }
+    @BeforeEach
+    void addListener() {
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
     }
 }

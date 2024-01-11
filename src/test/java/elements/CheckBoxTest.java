@@ -1,6 +1,8 @@
 package elements;
 
+import com.codeborne.selenide.CollectionCondition;
 import core.BaseTest;
+import elements.page.CheckBoxPage;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -11,6 +13,7 @@ import static com.codeborne.selenide.CollectionCondition.texts;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.logevents.SelenideLogger.step;
 
 public class CheckBoxTest extends BaseTest {
 
@@ -18,7 +21,9 @@ public class CheckBoxTest extends BaseTest {
 
     @Test
     void checkingAll() {
-        open("/checkbox");
+        step("Открыть URL", () -> {
+            open("/checkbox");
+        });
         $(".main-header").shouldHave(text("Check box"));
         $(".rct-text").shouldHave(text("Home"));
         $("#tree-node > ol > li > span > button > svg").click();// home
@@ -52,16 +57,22 @@ public class CheckBoxTest extends BaseTest {
                         "wordFile",
                         "excelFile"));
 
-
 //        $(".rct-icon-check").shouldBe(checked);
 
 //        sleep(5000);
     }
+    public static final String TITLE = "Check box";
 
     @Test
     void checkOptions() {
-        open("/checkbox");
-        $(".main-header").shouldHave(text("Check box"));
+        CheckBoxPage checkBoxPage = new CheckBoxPage();
+        step("Открыть URL", () -> {
+            checkBoxPage.openPage();
+        });
+        step("Проверить текст заголовка " + TITLE, () -> {
+            checkBoxPage.checkHeader("Check box");
+        });
+
         $(".rct-option-expand-all").click();
         $(".rct-node-expanded").shouldBe(appear);
         $(".rct-option-collapse-all").click();

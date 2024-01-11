@@ -6,9 +6,11 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 
+import static io.qameta.allure.Allure.step;
 
 
 public class TextBoxTests extends BaseTest {
+
 
 
     @Tags({@Tag("BLOCKER"), @Tag("UI-TEST")})
@@ -29,7 +31,9 @@ public class TextBoxTests extends BaseTest {
 
     @Test
     void name() {
-      // negative
+        step("Открыть страницу", () -> {
+            textBoxPage.openPage();
+        });
 
     }
 }
