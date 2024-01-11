@@ -17,6 +17,7 @@
         <aspectj.version>1.9.20.1</aspectj.version>
         <allure-junit5.version>5.9.0</allure-junit5.version>
         <allure.version>2.21.0</allure.version>
+        <jenkins.e2eTests.reportsDirectory>target/protractor-reports</jenkins.e2eTests.reportsDirectory>
     </properties>
     <dependencies>
         <dependency>
