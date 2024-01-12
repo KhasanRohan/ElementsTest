@@ -19,7 +19,7 @@ public class BaseTest {
     static void beforeAll(){
         Configuration.pageLoadStrategy = "eager";
         Configuration.baseUrl ="https://demoqa.com";
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+        Configuration.remote = "https://selenoid.autotests.cloud/#/";
 //        SelenideLogger.addListener("Report Portal logger", new ReportPortalSelenideEventListener());
 
     }
